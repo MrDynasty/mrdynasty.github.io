@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&family=Edu+AU+VIC+WA+NT+Hand:wght@700&display=swap');
 
 :root {
+  --design-max-width: 1280;
+  --content-max-width: calc(var(--design-max-width) * 1px);
+  --fluid-base: min(100vw, calc(var(--design-max-width) * 1px));
+  --fs-body-max: 1rem;
+  --fs-top-links-max: 0.9rem;
+  --fs-hero-copy-max: 1.15rem;
+  --fs-hero-meta-max: 11px;
+  --fs-hero-title-max: 64px;
+  --fs-section-title-max: 64px;
+  --fs-step-title-max: 2.15rem;
+  --fs-step-body-max: 0.95rem;
+  --fs-feature-title-max: 32px;
+  --fs-feature-body-max: 0.98rem;
+  --fs-footer-title-max: 64px;
+  --fs-footer-meta-max: 0.62rem;
   --bg: #ffffff;
   --ink: #31384a;
   --blue: #3978f2;
@@ -17,6 +32,7 @@
 body {
   margin: 0;
   font-family: 'Lexend', sans-serif;
+  font-size: var(--fs-body-max);
   background: var(--bg);
   color: var(--ink);
 }
@@ -31,7 +47,7 @@ a {
 }
 
 .content-shell {
-  width: min(1280px, calc(100% - 32px));
+  width: min(var(--content-max-width), calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -41,12 +57,13 @@ a {
 }
 
 .hero-shell {
-  --hero-device-width: 418px;
+  --hero-device-width: clamp(290px, calc(var(--fluid-base) * 418 / var(--design-max-width)), 418px);
   --hero-device-height: calc(var(--hero-device-width) * 1950 / 1412);
   position: relative;
   overflow: hidden;
-  height: 1080px;
-  border-radius: 0 0 26px 26px;
+  height: clamp(760px, calc(var(--fluid-base) * 1080 / var(--design-max-width)), 1080px);
+  border-radius: 0 0 clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px)
+    clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px);
   padding: 0 1.5rem 0;
 }
 
@@ -69,8 +86,8 @@ a {
 }
 
 .brand img {
-  width: 44px;
-  height: 44px;
+  width: clamp(34px, calc(var(--fluid-base) * 44 / var(--design-max-width)), 44px);
+  height: clamp(34px, calc(var(--fluid-base) * 44 / var(--design-max-width)), 44px);
 }
 
 .top-actions,
@@ -86,7 +103,7 @@ a {
 
 .top-links {
   gap: 1.6rem;
-  font-size: 0.9rem;
+  font-size: clamp(0.78rem, calc(var(--fluid-base) * 14.4 / var(--design-max-width)), var(--fs-top-links-max));
   color: #111;
 }
 
@@ -97,8 +114,8 @@ a {
 .social-link {
   display: grid;
   place-items: center;
-  width: 18px;
-  height: 18px;
+  width: clamp(14px, calc(var(--fluid-base) * 18 / var(--design-max-width)), 18px);
+  height: clamp(14px, calc(var(--fluid-base) * 18 / var(--design-max-width)), 18px);
   color: #3b485b;
 }
 
@@ -110,26 +127,27 @@ a {
 
 .hero-content {
   position: absolute;
-  inset: auto 1.5rem 223px;
+  inset: auto clamp(1rem, calc(var(--fluid-base) * 24 / var(--design-max-width)), 1.5rem)
+    clamp(120px, calc(var(--fluid-base) * 223 / var(--design-max-width)), 223px);
   z-index: 2;
   height: var(--hero-device-height);
 }
 
 .hero-copy {
   position: absolute;
-  top: 62px;
+  top: clamp(32px, calc(var(--fluid-base) * 62 / var(--design-max-width)), 62px);
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: max-content;
-  max-width: 750px;
+  max-width: clamp(520px, calc(var(--fluid-base) * 750 / var(--design-max-width)), 750px);
 }
 
 .hero-copy p {
   width: 100%;
-  max-width: 576px;
-  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  max-width: clamp(420px, calc(var(--fluid-base) * 576 / var(--design-max-width)), 576px);
+  font-size: clamp(1rem, calc(var(--fluid-base) * 18.4 / var(--design-max-width)), var(--fs-hero-copy-max));
   line-height: 1.28;
   margin: 1.2rem 0 1.45rem;
 }
@@ -142,19 +160,19 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: clamp(10px, calc(var(--fluid-base) * 16 / var(--design-max-width)), 16px);
 }
 
 .hero-store img {
   display: block;
-  width: 203px;
-  height: 68px;
+  width: clamp(158px, calc(var(--fluid-base) * 203 / var(--design-max-width)), 203px);
+  height: auto;
 }
 
 .hero-store small {
   display: block;
   color: #9198a5;
-  font-size: 11px;
+  font-size: clamp(9px, calc(var(--fluid-base) * 11 / var(--design-max-width)), var(--fs-hero-meta-max));
   letter-spacing: 0.03em;
 }
 
@@ -165,7 +183,7 @@ a {
 .hero-title {
   font-weight: 900;
   color: var(--blue);
-  font-size: clamp(3rem, 4.75vw, 5rem);
+  font-size: clamp(2.6rem, calc(var(--fluid-base) * 80 / var(--design-max-width)), var(--fs-hero-title-max));
   line-height: 1.14;
   letter-spacing: -0.03em;
 }
@@ -183,7 +201,7 @@ a {
 .mascot {
   position: absolute;
   left: 0;
-  bottom: 118px;
+  bottom: clamp(72px, calc(var(--fluid-base) * 118 / var(--design-max-width)), 118px);
   width: 100%;
   height: auto;
   z-index: 0;
@@ -196,13 +214,17 @@ a {
 .section-float {
   margin: 0 auto clamp(3.4rem, 5vw, 4.8rem);
   text-align: center;
-  max-width: 720px;
+  max-width: 900px;
+}
+
+.section-float-line {
+  margin: 0;
 }
 
 .section-title {
   color: var(--blue);
   font-weight: 900;
-  font-size: clamp(3rem, 4.6vw, 4.75rem);
+  font-size: clamp(2.4rem, calc(var(--fluid-base) * 76 / var(--design-max-width)), var(--fs-section-title-max));
   line-height: 1.16;
 }
 
@@ -228,7 +250,7 @@ a {
 .step-card h3 {
   font-family: 'Edu AU VIC WA NT Hand', cursive;
   color: var(--pink);
-  font-size: clamp(1.7rem, 2vw, 2.15rem);
+  font-size: clamp(1.7rem, calc(var(--fluid-base) * 34.4 / var(--design-max-width)), var(--fs-step-title-max));
   margin: 0.9rem 0 0.7rem;
   line-height: 1;
 }
@@ -236,57 +258,71 @@ a {
 .step-card p {
   margin: 0;
   line-height: 1.22;
-  font-size: 0.95rem;
+  font-size: clamp(0.86rem, calc(var(--fluid-base) * 15.2 / var(--design-max-width)), var(--fs-step-body-max));
   max-width: 280px;
 }
 
 .feature-section {
   background: var(--soft-blue);
   padding: clamp(4.5rem, 6vw, 5.4rem) 0;
+  width: 100%;
 }
 
 .feature-list {
-  max-width: 620px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin-inline: auto;
   display: grid;
   gap: 1.6rem;
+  width: fit-content;
+  max-width: 100%;
+  justify-items: start;
 }
 
 .feature-item {
-  display: grid;
-  grid-template-columns: 122px 1fr;
+  display: flex;
   gap: 1.35rem;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
 }
 
 .feature-item img {
-  width: 112px;
-  height: 112px;
+  width: clamp(96px, calc(var(--fluid-base) * 220 / var(--design-max-width)), 220px);
+  height: clamp(96px, calc(var(--fluid-base) * 220 / var(--design-max-width)), 220px);
   object-fit: contain;
   justify-self: center;
 }
 
 .feature-item h4 {
   margin: 0 0 0.6rem;
-  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-size: clamp(1.55rem, calc(var(--fluid-base) * 32 / var(--design-max-width)), var(--fs-feature-title-max));
   color: var(--pink);
   font-family: 'Edu AU VIC WA NT Hand', cursive;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .feature-item p {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: clamp(0.88rem, calc(var(--fluid-base) * 15.68 / var(--design-max-width)), var(--fs-feature-body-max));
   line-height: 1.3;
+  white-space: nowrap;
 }
 
 .feature-copy {
-  max-width: 420px;
+  max-width: none;
+  text-align: left;
 }
 
 .footer-section {
   text-align: center;
   padding: clamp(5.5rem, 7vw, 6.8rem) 0 0;
+}
+
+.footer-section .content-shell {
+  width: 100%;
+  max-width: none;
 }
 
 .footer-float {
@@ -296,14 +332,14 @@ a {
 .footer-title {
   color: var(--blue);
   font-weight: 900;
-  font-size: clamp(3rem, 4.6vw, 4.6rem);
+  font-size: clamp(2.4rem, calc(var(--fluid-base) * 73.6 / var(--design-max-width)), var(--fs-footer-title-max));
   line-height: 1.15;
 }
 
 .footer-section p {
   margin-top: 0.85rem;
   color: #959aa3;
-  font-size: 0.62rem;
+  font-size: clamp(0.58rem, calc(var(--fluid-base) * 9.92 / var(--design-max-width)), var(--fs-footer-meta-max));
 }
 
 .footer-section img {
@@ -361,7 +397,7 @@ a {
 
   .hero-device {
     position: relative;
-    width: 360px;
+    width: min(360px, 68vw);
     height: auto;
     right: auto;
     bottom: auto;
@@ -379,43 +415,32 @@ a {
   }
 
   .feature-item {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
 @media (max-width: 720px) {
   .content-shell {
-    width: min(1280px, calc(100% - 24px));
+    width: min(var(--content-max-width), calc(100% - 24px));
   }
 
   .top-links {
     gap: 1rem;
-    font-size: 0.78rem;
   }
 
   .brand img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .hero-title,
-  .section-title,
-  .footer-title {
-    font-size: 2.6rem;
+    width: min(40px, 11vw);
+    height: min(40px, 11vw);
   }
 
   .hero-device {
-    width: 290px;
+    width: min(290px, 78vw);
   }
 
   .hero-shell {
     min-height: 640px;
   }
 
-  .feature-item img {
-    width: 96px;
-    height: 96px;
-  }
 }

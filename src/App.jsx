@@ -134,15 +134,25 @@ function App() {
 
       <section className="steps-section">
         <div className="content-shell">
-          <ScrollFloat
-            containerClassName="section-float"
-            textClassName="section-title"
-            scrollStart="top bottom-=10%"
-            scrollEnd="bottom center"
-          >
-            The easiest game ever: Do absolutely nothing.
-          </ScrollFloat>
-
+          <div className="section-float">
+            <ScrollFloat
+              containerClassName="section-float-line"
+              textClassName="section-title"
+              scrollStart="top bottom-=10%"
+              scrollEnd="bottom center"
+            >
+              The easiest game ever:
+            </ScrollFloat>
+            <ScrollFloat
+              containerClassName="section-float-line"
+              textClassName="section-title"
+              scrollStart="top bottom-=10%"
+              scrollEnd="bottom center"
+            >
+              Do absolutely nothing.
+            </ScrollFloat>
+          </div>
+          
           <div className="steps-grid">
             {steps.map((item) => (
               <article key={item.title} className="step-card">
