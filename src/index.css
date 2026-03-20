@@ -107,8 +107,22 @@ a {
   color: #111;
 }
 
+.top-links-divider {
+  width: 1px;
+  height: 21px;
+  background: #4a556833;
+  flex-shrink: 0;
+}
+
 .social-links {
   gap: 0.8rem;
+}
+
+.top-divider {
+  width: 1px;
+  height: 21px;
+  background: #4a556833;
+  flex-shrink: 0;
 }
 
 .social-link {
@@ -123,6 +137,13 @@ a {
   width: 100%;
   height: 100%;
   fill: currentColor;
+}
+
+.social-link img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 .hero-content {
@@ -393,6 +414,10 @@ a {
 
   .top-actions {
     gap: 1rem;
+  }
+
+  .top-divider {
+    display: none;
   }
 
   .hero-device {

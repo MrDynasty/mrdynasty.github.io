@@ -12,6 +12,9 @@ const assets = {
   feature1: '/assets/feature-1.png',
   feature2: '/assets/feature-2.png',
   feature3: '/assets/feature-3.png',
+  socialX: '/assets/x.png',
+  socialTikTok: '/assets/tiktok.png',
+  socialInstagram: '/assets/instagram.png',
 }
 
 const steps = [
@@ -74,23 +77,19 @@ function App() {
             <div className="top-actions">
               <div className="top-links">
                 <a href="#contact">Contact Us</a>
+                <span className="top-links-divider" aria-hidden="true" />
                 <a href="#privacy">Privacy Policy</a>
               </div>
+              <span className="top-divider" aria-hidden="true" />
               <div className="social-links" aria-label="Social links">
                 <SocialIcon label="X">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 4h2.8l4.4 6.1L17.4 4H20l-6.5 7.4L20 20h-2.8l-4.8-6.6L6.6 20H4l7-8z" />
-                  </svg>
+                  <img src={assets.socialX} alt="" aria-hidden="true" />
                 </SocialIcon>
                 <SocialIcon label="TikTok">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 4c.5 1.6 1.4 2.8 3 3.5 1 .4 1.8.5 3 .5v2.8c-1.3 0-2.6-.3-3.8-.8v4.6c0 3-2.4 5.4-5.4 5.4A5.4 5.4 0 0 1 5.4 15c0-3 2.4-5.4 5.4-5.4.3 0 .6 0 .9.1V13a2.5 2.5 0 0 0-.9-.2A2.3 2.3 0 0 0 8.5 15a2.3 2.3 0 0 0 2.3 2.3 2.3 2.3 0 0 0 2.3-2.3V4z" />
-                  </svg>
+                  <img src={assets.socialTikTok} alt="" aria-hidden="true" />
                 </SocialIcon>
                 <SocialIcon label="Instagram">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3m0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7zm9.6 1.3a1.1 1.1 0 1 1 0 2.1 1.1 1.1 0 0 1 0-2.1M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4" />
-                  </svg>
+                  <img src={assets.socialInstagram} alt="" aria-hidden="true" />
                 </SocialIcon>
               </div>
             </div>
