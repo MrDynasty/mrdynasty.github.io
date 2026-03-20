@@ -1,99 +1,14 @@
 import ScrollFloat from './components/ScrollFloat'
-
-const assets = {
-  meadow: '/assets/meadow.png',
-  phoneFrame: '/assets/phone-frame.png',
-  mascot: '/assets/mascot.png',
-  logo: '/assets/logo.png',
-  card1: '/assets/card-1.png',
-  card2: '/assets/card-2.png',
-  card3: '/assets/card-3.png',
-  appStore: '/assets/app-store-figma.png',
-  feature1: '/assets/feature-1.png',
-  feature2: '/assets/feature-2.png',
-  feature3: '/assets/feature-3.png',
-  socialX: '/assets/x.png',
-  socialTikTok: '/assets/tiktok.png',
-  socialInstagram: '/assets/instagram.png',
-}
-
-const steps = [
-  {
-    title: 'Disconnect.',
-    desc: 'Lay your phone flat. Watch your stressed corporate dog finally take a nap.',
-    img: assets.card1,
-  },
-  {
-    title: "Don't Panic.",
-    desc: 'Pick it up too soon? Your dog wakes up in a panic. Put it back down to soothe them.',
-    img: assets.card2,
-  },
-  {
-    title: 'Collect Rewards.',
-    desc: 'Long-press to gently wake your dog. Draw witty, brutally honest "Chill Cards". Can you find the secret ones?',
-    img: assets.card3,
-  },
-]
-
-const features = [
-  {
-    title: 'Neurodivergent-Friendly Audio:',
-    desc: 'Brown noise, rain, and puppy snores to calm racing thoughts.',
-    img: assets.feature1,
-    emoji: '🎵',
-  },
-  {
-    title: 'StandBy Mode:',
-    desc: 'Turn your charging iPhone into a lo-fi digital fireplace.',
-    img: assets.feature2,
-    emoji: '🏝️',
-  },
-  {
-    title: 'Zero Data Collection',
-    desc: "We don't track you. Your chill time is yours alone.",
-    img: assets.feature3,
-    emoji: '🔒',
-  },
-]
-
-function SocialIcon({ children, label }) {
-  return (
-    <a className="social-link" href="/" aria-label={label} onClick={(event) => event.preventDefault()}>
-      {children}
-    </a>
-  )
-}
+import SiteFooter from './components/SiteFooter'
+import TopNav from './components/TopNav'
+import { assets, features, steps } from './siteData'
 
 function App() {
   return (
     <main className="page">
       <section className="hero-section">
         <div className="content-shell hero-shell">
-          <nav className="topbar">
-            <div className="brand">
-              <img src={assets.logo} alt="Ret Park logo" />
-              <span>Ret Park</span>
-            </div>
-            <div className="top-actions">
-              <div className="top-links">
-                <a href="#contact">Contact Us</a>
-                <span className="top-links-divider" aria-hidden="true" />
-                <a href="#privacy">Privacy Policy</a>
-              </div>
-              <span className="top-divider" aria-hidden="true" />
-              <div className="social-links" aria-label="Social links">
-                <SocialIcon label="X">
-                  <img src={assets.socialX} alt="" aria-hidden="true" />
-                </SocialIcon>
-                <SocialIcon label="TikTok">
-                  <img src={assets.socialTikTok} alt="" aria-hidden="true" />
-                </SocialIcon>
-                <SocialIcon label="Instagram">
-                  <img src={assets.socialInstagram} alt="" aria-hidden="true" />
-                </SocialIcon>
-              </div>
-            </div>
-          </nav>
+          <TopNav />
 
           <div className="hero-content">
             <div className="hero-copy">
@@ -151,7 +66,7 @@ function App() {
               Do absolutely nothing.
             </ScrollFloat>
           </div>
-          
+
           <div className="steps-grid">
             {steps.map((item) => (
               <article key={item.title} className="step-card">
@@ -182,20 +97,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="footer-section">
-        <div className="content-shell">
-          <ScrollFloat
-            containerClassName="footer-float"
-            textClassName="footer-title"
-            scrollStart="top bottom-=20%"
-            scrollEnd="bottom center"
-          >
-            Your digital soft landing.
-          </ScrollFloat>
-          <p>Copyright © 2026 RetPark Studio. All rights reserved.</p>
-          <img src={assets.meadow} alt="" />
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   )
 }

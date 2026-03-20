@@ -4,6 +4,7 @@
   --design-max-width: 1280;
   --content-max-width: calc(var(--design-max-width) * 1px);
   --fluid-base: min(100vw, calc(var(--design-max-width) * 1px));
+  --top-bg-height: clamp(760px, calc(var(--fluid-base) * 1080 / var(--design-max-width)), 1080px);
   --fs-body-max: 1rem;
   --fs-top-links-max: 0.9rem;
   --fs-hero-copy-max: 1.15rem;
@@ -30,10 +31,15 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: 'Lexend', sans-serif;
   font-size: var(--fs-body-max);
   background: var(--bg);
+  background-image: linear-gradient(180deg, #95d4ff 0%, #ffffff 88%);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% var(--top-bg-height);
   color: var(--ink);
 }
 
@@ -52,8 +58,12 @@ a {
 }
 
 .hero-section {
-  background: linear-gradient(180deg, #95d4ff 0%, #ffffff 88%);
   padding: 0.95rem 0 0;
+}
+
+.top-links a[aria-current='page'] {
+  color: var(--blue);
+  font-weight: 700;
 }
 
 .hero-shell {
@@ -61,7 +71,7 @@ a {
   --hero-device-height: calc(var(--hero-device-width) * 1950 / 1412);
   position: relative;
   overflow: hidden;
-  height: clamp(760px, calc(var(--fluid-base) * 1080 / var(--design-max-width)), 1080px);
+  height: var(--top-bg-height);
   border-radius: 0 0 clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px)
     clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px);
   padding: 0 1.5rem 0;
@@ -336,6 +346,83 @@ a {
   text-align: left;
 }
 
+.privacy-hero {
+  padding-top: 0.95rem;
+}
+
+.privacy-shell {
+  border-radius: 0 0 clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px)
+    clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px);
+  padding: 0 1.5rem clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.privacy-header {
+  margin: clamp(2.8rem, 5vw, 4.3rem) auto 0;
+  max-width: 920px;
+  text-align: center;
+}
+
+.privacy-header p {
+  margin: 1rem auto 0;
+  max-width: 760px;
+  line-height: 1.35;
+  color: #5e687d;
+  font-size: clamp(0.98rem, calc(var(--fluid-base) * 17 / var(--design-max-width)), 1.06rem);
+}
+
+.privacy-section {
+  background: transparent;
+  padding: clamp(1.1rem, 2.2vw, 1.8rem) 0 clamp(5rem, 7vw, 6.4rem);
+}
+
+.privacy-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.privacy-card {
+  background: var(--soft-blue);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.privacy-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--pink);
+  font-family: 'Edu AU VIC WA NT Hand', cursive;
+  font-size: clamp(1.45rem, calc(var(--fluid-base) * 29 / var(--design-max-width)), 1.85rem);
+  line-height: 1.1;
+}
+
+.privacy-card p,
+.privacy-card li {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(0.9rem, calc(var(--fluid-base) * 15.2 / var(--design-max-width)), 0.95rem);
+  line-height: 1.5;
+}
+
+.privacy-card p + p,
+.privacy-card p + ul,
+.privacy-card ul + p {
+  margin-top: 0.55rem;
+}
+
+.privacy-card ul {
+  margin: 0;
+  padding-left: 1.18rem;
+}
+
+.privacy-meta {
+  margin: 1rem auto 0;
+  text-align: center;
+  color: #8a92a0;
+  font-size: 0.82rem;
+}
+
 .footer-section {
   text-align: center;
   padding: clamp(5.5rem, 7vw, 6.8rem) 0 0;
@@ -420,6 +507,10 @@ a {
     display: none;
   }
 
+  .privacy-shell {
+    padding-inline: 1rem;
+  }
+
   .hero-device {
     position: relative;
     width: min(360px, 68vw);
@@ -467,5 +558,4 @@ a {
   .hero-shell {
     min-height: 640px;
   }
-
 }
