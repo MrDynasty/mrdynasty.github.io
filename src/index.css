@@ -423,6 +423,91 @@ a {
   font-size: 0.82rem;
 }
 
+.contact-hero {
+  padding-top: 0.95rem;
+}
+
+.contact-shell {
+  padding: 0 1.5rem clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.contact-header {
+  margin: clamp(2.8rem, 5vw, 4.3rem) auto 0;
+  max-width: 920px;
+  text-align: center;
+}
+
+.contact-header p {
+  margin: 1rem auto 0;
+  max-width: 760px;
+  line-height: 1.35;
+  color: #5e687d;
+  font-size: clamp(0.98rem, calc(var(--fluid-base) * 17 / var(--design-max-width)), 1.06rem);
+}
+
+.contact-section {
+  padding: clamp(1.1rem, 2.2vw, 1.8rem) 0 clamp(5rem, 7vw, 6.4rem);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.contact-card {
+  background: var(--soft-blue);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.contact-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--pink);
+  font-family: 'Edu AU VIC WA NT Hand', cursive;
+  font-size: clamp(1.45rem, calc(var(--fluid-base) * 29 / var(--design-max-width)), 1.85rem);
+  line-height: 1.1;
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(0.9rem, calc(var(--fluid-base) * 15.2 / var(--design-max-width)), 0.95rem);
+  line-height: 1.5;
+}
+
+.contact-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  background: var(--blue);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.contact-btn.ghost {
+  background: #fff;
+  color: var(--blue);
+  border-color: #b8cffd;
+}
+
 .footer-section {
   text-align: center;
   padding: clamp(5.5rem, 7vw, 6.8rem) 0 0;
@@ -511,6 +596,10 @@ a {
     padding-inline: 1rem;
   }
 
+  .contact-shell {
+    padding-inline: 1rem;
+  }
+
   .hero-device {
     position: relative;
     width: min(360px, 68vw);
@@ -549,6 +638,10 @@ a {
   .brand img {
     width: min(40px, 11vw);
     height: min(40px, 11vw);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-device {

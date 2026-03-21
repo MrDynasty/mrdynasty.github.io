@@ -54,7 +54,7 @@ function PrivacyPage() {
     <main className="page privacy-page">
       <section className="hero-section privacy-hero">
         <div className="content-shell privacy-shell">
-          <TopNav isPrivacyPage />
+          <TopNav currentPage="privacy" />
 
           <div className="privacy-header">
             <ScrollFloat

@@ -15,6 +15,8 @@ export const assets = {
   socialInstagram: '/assets/instagram.png',
 }
 
+export const contactEmail = 'pepermao94@gmail.com'
+
 export const steps = [
   {
     title: 'Disconnect.',
