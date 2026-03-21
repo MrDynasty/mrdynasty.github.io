@@ -1,8 +1,14 @@
 import { assets, contactEmail } from '../siteData'
 
-function SocialIcon({ children, label }) {
+function SocialIcon({ children, label, href }) {
   return (
-    <a className="social-link" href="/" aria-label={label} onClick={(event) => event.preventDefault()}>
+    <a
+      className="social-link"
+      href={href}
+      aria-label={label}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   )
@@ -67,13 +73,10 @@ function TopNav({ currentPage = 'home' }) {
         </div>
         <span className="top-divider" aria-hidden="true" />
         <div className="social-links" aria-label="Social links">
-          <SocialIcon label="X">
-            <img src={assets.socialX} alt="" aria-hidden="true" />
-          </SocialIcon>
-          <SocialIcon label="TikTok">
+          <SocialIcon label="TikTok" href="https://www.tiktok.com/@retpark_studio">
             <img src={assets.socialTikTok} alt="" aria-hidden="true" />
           </SocialIcon>
-          <SocialIcon label="Instagram">
+          <SocialIcon label="Instagram" href="https://www.instagram.com/retpark_studio/">
             <img src={assets.socialInstagram} alt="" aria-hidden="true" />
           </SocialIcon>
         </div>

@@ -4,47 +4,56 @@ import TopNav from './components/TopNav'
 
 const privacySections = [
   {
-    title: '1. Data Collection',
+    title: '1. Information We Do Not Collect',
     paragraphs: [
-      'Ret Park does not require account registration to access the core experience. We do not ask for sensitive personal data to use core timer and companion features.',
+      'Put simply: We do not collect, store, transmit, or share any of your personal data on our servers.',
+      'RetPark does not require you to create an account, does not track your location, and does not harvest your personal information. Your "chill sessions," focus data, and pet collection progress belong entirely to you.',
     ],
   },
   {
-    title: '2. Device and Usage Data',
+    title: '2. Local Storage and iCloud',
     paragraphs: [
-      'We keep telemetry minimal. Operational diagnostics, if enabled, are limited to reliability and error monitoring and are designed to avoid direct personal identification.',
+      "All data generated within the App (such as your pet's status, chill tickets, and receipt cards) is stored locally on your iOS device.",
+      "If you choose to back up your device using Apple's iCloud, your App data will be securely synced via your personal Apple ID. We do not have access to your iCloud data. This process is governed exclusively by Apple's Privacy Policy.",
     ],
   },
   {
-    title: '3. How Information Is Used',
-    bullets: [
-      'Maintain core app stability and feature reliability.',
-      'Troubleshoot crashes and improve product quality.',
-      'Protect service integrity and reduce abuse.',
+    title: '3. In-App Purchases',
+    paragraphs: [
+      'RetPark offers In-App Purchases (such as the RetPark PRO Lifetime unlock). All payment transactions are processed securely by Apple via the App Store. We do not process, receive, or have access to your credit card information, billing details, or Apple ID credentials.',
     ],
   },
   {
-    title: '4. Third-Party Services',
+    title: '4. Analytics and Crash Reports',
     paragraphs: [
-      'Ret Park avoids invasive trackers. When third-party integrations are introduced, this page will be updated before rollout to describe their purpose and data impact.',
+      "We do not use third-party analytics or tracking SDKs. We may only receive anonymous, aggregated crash reports and usage metrics provided directly by Apple (if you have opted-in to share these analytics with developers in your iOS device settings). This anonymous data is used solely to fix bugs and improve the App's performance.",
     ],
   },
   {
-    title: '5. Data Retention',
+    title: '5. External Links',
     paragraphs: [
-      'Any operational data is retained only for as long as required for technical operation, security, and legal compliance.',
+      'The App may contain links to our official website (https://www.retpark.com) or external social media platforms for support and community purposes. Please note that if you click on a third-party link, you will be directed to that site.',
+      'We strongly advise you to review the Privacy Policy of any external sites you visit, as we have no control over their content or privacy practices.',
     ],
   },
   {
     title: "6. Children's Privacy",
     paragraphs: [
-      'Ret Park is not intended to knowingly collect personal data from children. If you believe data may have been submitted in error, contact us so we can review and remove it where appropriate.',
+      'RetPark does not knowingly collect any personal information from children under the age of 13 (or 16 in certain jurisdictions), as we do not collect personal information from anyone.',
     ],
   },
   {
-    title: '7. Contact',
+    title: '7. Changes to This Privacy Policy',
     paragraphs: [
-      'For privacy-related requests, please contact privacy@retpark.app.',
+      'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top.',
+    ],
+  },
+  {
+    title: '8. Contact Us',
+    paragraphs: [
+      'If you have any questions or suggestions about our Privacy Policy, please feel free to contact us:',
+      'Website: https://www.retpark.com',
+      'Email: pepermao94@gmail.com',
     ],
   },
 ]
@@ -66,9 +75,14 @@ function PrivacyPage() {
               Privacy Policy
             </ScrollFloat>
             <p>
-              Ret Park is designed to be calm and private by default. This page
-              explains what we collect, why we collect it, and how we protect your
-              information.
+              Welcome to RetPark! We built this app to be a safe, stress-free
+              digital sanctuary. Because we believe in true relaxation, we have
+              designed RetPark with a strict privacy-first approach.
+            </p>
+            <p>
+              This Privacy Policy explains how we handle your data when you use
+              the RetPark mobile application ("the App") and our official website
+              (https://www.retpark.com).
             </p>
           </div>
         </div>
@@ -83,17 +97,10 @@ function PrivacyPage() {
                 {section.paragraphs?.map((text) => (
                   <p key={text}>{text}</p>
                 ))}
-                {section.bullets ? (
-                  <ul>
-                    {section.bullets.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                ) : null}
               </article>
             ))}
           </div>
-          <p className="privacy-meta">Last updated: March 21, 2026</p>
+          <p className="privacy-meta">Last Updated: March 17, 2026</p>
         </div>
       </section>
 
