@@ -16,6 +16,7 @@ function SocialIcon({ children, label, href }) {
 
 function TopNav({ currentPage = 'home' }) {
   const isPrivacyPage = currentPage === 'privacy'
+  const isTermsPage = currentPage === 'terms'
   const isContactPage = currentPage === 'contact'
   const fallbackContactPage = '/contact.html'
   const mailtoHref = `mailto:${contactEmail}`
@@ -69,6 +70,10 @@ function TopNav({ currentPage = 'home' }) {
           <span className="top-links-divider" aria-hidden="true" />
           <a href="/privacy.html" aria-current={isPrivacyPage ? 'page' : undefined}>
             Privacy Policy
+          </a>
+          <span className="top-links-divider" aria-hidden="true" />
+          <a href="/terms.html" aria-current={isTermsPage ? 'page' : undefined}>
+            Terms of Use
           </a>
         </div>
         <span className="top-divider" aria-hidden="true" />

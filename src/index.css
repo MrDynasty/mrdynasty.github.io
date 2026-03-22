@@ -346,23 +346,27 @@ a {
   text-align: left;
 }
 
-.privacy-hero {
+.privacy-hero,
+.terms-hero {
   padding-top: 0.95rem;
 }
 
-.privacy-shell {
+.privacy-shell,
+.terms-shell {
   border-radius: 0 0 clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px)
     clamp(18px, calc(var(--fluid-base) * 26 / var(--design-max-width)), 26px);
   padding: 0 1.5rem clamp(1.2rem, 2.4vw, 1.8rem);
 }
 
-.privacy-header {
+.privacy-header,
+.terms-header {
   margin: clamp(2.8rem, 5vw, 4.3rem) auto 0;
   max-width: 920px;
   text-align: center;
 }
 
-.privacy-header p {
+.privacy-header p,
+.terms-header p {
   margin: 1rem auto 0;
   max-width: 760px;
   line-height: 1.35;
@@ -370,26 +374,30 @@ a {
   font-size: clamp(0.98rem, calc(var(--fluid-base) * 17 / var(--design-max-width)), 1.06rem);
 }
 
-.privacy-section {
+.privacy-section,
+.terms-section {
   background: transparent;
   padding: clamp(1.1rem, 2.2vw, 1.8rem) 0 clamp(5rem, 7vw, 6.4rem);
 }
 
-.privacy-grid {
+.privacy-grid,
+.terms-grid {
   display: grid;
   gap: 1rem;
   max-width: 920px;
   margin: 0 auto;
 }
 
-.privacy-card {
+.privacy-card,
+.terms-card {
   background: var(--soft-blue);
   border: 1px solid var(--stroke);
   border-radius: 18px;
   padding: clamp(1rem, 2.2vw, 1.35rem);
 }
 
-.privacy-card h3 {
+.privacy-card h3,
+.terms-card h3 {
   margin: 0 0 0.55rem;
   color: var(--pink);
   font-family: 'Edu AU VIC WA NT Hand', cursive;
@@ -398,7 +406,9 @@ a {
 }
 
 .privacy-card p,
-.privacy-card li {
+.privacy-card li,
+.terms-card p,
+.terms-card li {
   margin: 0;
   color: var(--ink);
   font-size: clamp(0.9rem, calc(var(--fluid-base) * 15.2 / var(--design-max-width)), 0.95rem);
@@ -407,16 +417,28 @@ a {
 
 .privacy-card p + p,
 .privacy-card p + ul,
-.privacy-card ul + p {
+.privacy-card ul + p,
+.terms-card p + p,
+.terms-card p + ul,
+.terms-card ul + p {
   margin-top: 0.55rem;
 }
 
-.privacy-card ul {
+.privacy-card ul,
+.terms-card ul {
   margin: 0;
   padding-left: 1.18rem;
 }
 
-.privacy-meta {
+.privacy-card a,
+.terms-card a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.privacy-meta,
+.terms-meta {
   margin: 1rem auto 0;
   text-align: center;
   color: #8a92a0;
@@ -596,6 +618,10 @@ a {
     padding-inline: 1rem;
   }
 
+  .terms-shell {
+    padding-inline: 1rem;
+  }
+
   .contact-shell {
     padding-inline: 1rem;
   }
@@ -633,6 +659,12 @@ a {
 
   .top-links {
     gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .top-links-divider {
+    display: none;
   }
 
   .brand img {
