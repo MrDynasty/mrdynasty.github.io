@@ -1,0 +1,15 @@
+---
+description: Browser debugging must use localhost only
+alwaysApply: true
+---
+
+# Browser Debugging Network Restriction
+
+When using browser tools for local debugging:
+
+- Only navigate to `http://localhost:<port>` or `http://127.0.0.1:<port>`.
+- Never use LAN/private network addresses such as `10.x.x.x`, `172.16-31.x.x`, `192.168.x.x`, or `*.local`.
+- Never expose or rely on development servers bound for LAN access during debugging.
+- Do not start dev servers with `--host 0.0.0.0` (or equivalent LAN binding). Prefer default host or explicit localhost binding.
+
+If a local page does not load on `localhost`, fix the local dev-server setup first, then continue using localhost URLs only.
