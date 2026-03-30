@@ -226,7 +226,7 @@ a {
   font-weight: 900;
   color: var(--blue);
   font-size: clamp(2.6rem, calc(var(--fluid-base) * 80 / var(--design-max-width)), var(--fs-hero-title-max));
-  line-height: 1.14;
+  /* line-height: 1.14; */
   letter-spacing: -0.03em;
 }
 
@@ -267,7 +267,7 @@ a {
   color: var(--blue);
   font-weight: 900;
   font-size: clamp(2.4rem, calc(var(--fluid-base) * 76 / var(--design-max-width)), var(--fs-section-title-max));
-  line-height: 1.16;
+  /* line-height: 1.16; */
 }
 
 .steps-grid {
@@ -564,7 +564,7 @@ a {
   color: var(--blue);
   font-weight: 900;
   font-size: clamp(2.4rem, calc(var(--fluid-base) * 73.6 / var(--design-max-width)), var(--fs-footer-title-max));
-  line-height: 1.15;
+  /* line-height: 1.15; */
 }
 
 .footer-section p {
