@@ -205,6 +205,18 @@ a {
   gap: clamp(10px, calc(var(--fluid-base) * 16 / var(--design-max-width)), 16px);
 }
 
+.hero-store a {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.hero-store a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .hero-store img {
   display: block;
   width: clamp(158px, calc(var(--fluid-base) * 203 / var(--design-max-width)), 203px);

@@ -17,6 +17,9 @@ export const assets = {
 
 export const contactEmail = 'pepermao94@gmail.com'
 
+/** App Store listing (numeric id from App Store Connect). */
+export const appStoreUrl = 'https://apps.apple.com/app/id6760121298'
+
 export const steps = [
   {
     title: 'Disconnect.',

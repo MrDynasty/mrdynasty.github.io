@@ -1,7 +1,7 @@
 import ScrollFloat from './components/ScrollFloat'
 import SiteFooter from './components/SiteFooter'
 import TopNav from './components/TopNav'
-import { assets, features, steps } from './siteData'
+import { appStoreUrl, assets, features, steps } from './siteData'
 
 function App() {
   return (
@@ -34,7 +34,14 @@ function App() {
                 offline time.
               </p>
               <div className="hero-store">
-                <img src={assets.appStore} alt="Download on the App Store" />
+                <a
+                  href={appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download on the App Store"
+                >
+                  <img src={assets.appStore} alt="" />
+                </a>
                 <small>Featured on iOS 18 • Zero Ads • Privacy First</small>
               </div>
             </div>
