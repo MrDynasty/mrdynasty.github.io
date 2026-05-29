@@ -12,6 +12,8 @@ export default defineConfig({
         privacy: fileURLToPath(new URL('privacy.html', import.meta.url)),
         contact: fileURLToPath(new URL('contact.html', import.meta.url)),
         terms: fileURLToPath(new URL('terms.html', import.meta.url)),
+        'ching-privacy': fileURLToPath(new URL('ching-privacy.html', import.meta.url)),
+        'ching-terms': fileURLToPath(new URL('ching-terms.html', import.meta.url)),
       },
     },
   },
