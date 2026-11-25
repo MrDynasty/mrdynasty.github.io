@@ -14,6 +14,16 @@ export default defineConfig({
         terms: fileURLToPath(new URL('terms.html', import.meta.url)),
         'ching-privacy': fileURLToPath(new URL('ching-privacy.html', import.meta.url)),
         'ching-terms': fileURLToPath(new URL('ching-terms.html', import.meta.url)),
+        'seven-gentle': fileURLToPath(new URL('seven-gentle/index.html', import.meta.url)),
+        'seven-gentle-support': fileURLToPath(
+          new URL('seven-gentle/support/index.html', import.meta.url),
+        ),
+        'seven-gentle-privacy': fileURLToPath(
+          new URL('seven-gentle/privacy/index.html', import.meta.url),
+        ),
+        'seven-gentle-terms': fileURLToPath(
+          new URL('seven-gentle/terms/index.html', import.meta.url),
+        ),
       },
     },
   },

@@ -2,6 +2,25 @@
 
 Official website project for RetPark, built with React + Vite.
 
+## Seven Gentle (PM-107) pages
+
+The Seven Gentle app pages are hosted on this site under `/seven-gentle/`. Use these
+URLs in App Store Connect:
+
+| App Store Connect field | URL |
+| --- | --- |
+| Marketing URL | https://retpark.com/seven-gentle/ |
+| Support URL | https://retpark.com/seven-gentle/support/ |
+| Privacy Policy URL | https://retpark.com/seven-gentle/privacy/ |
+
+Terms of Use: https://retpark.com/seven-gentle/terms/
+
+The source lives in `seven-gentle/` (HTML entries) and `src/seven-gentle/` (React
+components and styles). Each page is registered in `vite.config.js`, so
+`npm run build` emits `dist/seven-gentle/{index,support/index,privacy/index,terms/index}.html`.
+The copy mirrors the in-app legal text in PM-107's `LegalDocument.swift`; when that
+text changes, update these pages too.
+
 ## Privacy Policy for RetPark
 
 **Last Updated: March 17, 2026**

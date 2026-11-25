@@ -37,3 +37,9 @@ coverage/
 .DS_Store
 Thumbs.db
 /.npm-cache
+
+# Website-only local tooling
+/.build/
+/.cache/
+/.pnpm-store/
+/.playwright-browsers/
